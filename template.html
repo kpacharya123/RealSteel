@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notepad Style Text</title>
+    <style>
+        body {
+            font-family: "Courier New", Courier, monospace;
+            white-space: pre-wrap; /* Preserves spaces and line breaks */
+            background-color: #fff;
+            color: #000;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+from robot_command.rpl import *
+import math
+
+set_units("mm", "deg")
+
+def main():
+    movej(j[0,0,0,0,90,0], velocity_scale = 0.2)
+    
+    userFrame_pos_x = 400
+    userFrame_pos_y = 0
+    userFrame_pos_z = 550
+    userFrame_rotation_A = 0
+    userFrame_rotation_B = 0
+    userFrame_rotation_C = 0
+    set_user_frame("user_frame1", position=p[userFrame_pos_x, userFrame_pos_y, userFrame_pos_z, userFrame_rotation_A, userFrame_rotation_B, userFrame_rotation_C])
+    change_user_frame("user_frame1")
+    {% for row in text_array %}
+    movej(p{{ row }}
+    {% endfor %}
+            movej(p[0, y_coord, z_coord, angle-{{ angle }},0,0], velocity_scale = 0.2)
+    exit()
+</body>
+</html>
