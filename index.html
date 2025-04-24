@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jinja2 Robot GUI</title>
+</head>
+<body>
+    <h2>Change Robot Angle</h2>
+    <form method="POST">
+        <label for="angle">Enter Angle:</label>
+        <input type="number" name="angle" id="angle" value="{{ angle }}" required>
+        <button type="submit">Generate Code</button>
+    </form>
+    <h3>Generated Code:</h3>
+    <pre>{{ code }}</pre>
+</body>
+</html>
